@@ -3,11 +3,12 @@ import css from './ContactForm.module.css';
 import shortid from 'shortid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
+import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(state => state.contacts.items);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
   const handlerInput = event => {
     switch (event.target.name) {

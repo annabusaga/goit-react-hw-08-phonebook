@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 import { getToken } from 'redux/auth/selectors';
+import css from './SharedLayout.module.css';
 
 export default function SharedLayout(params) {
   const token = useSelector(getToken);
@@ -11,22 +12,30 @@ export default function SharedLayout(params) {
     <>
       <header>
         <nav>
-          <ul>
+          <ul className={css.list}>
             <li>
-              <Link to="/">Home</Link>
+              <Link className={css.link} to="/">
+                Home
+              </Link>
             </li>
             {token && (
               <li>
-                <Link to="/contacts">Contacts</Link>
+                <Link className={css.link} to="/contacts">
+                  Contacts
+                </Link>
               </li>
             )}
             {!token && (
               <>
                 <li>
-                  <Link to="/register">Register</Link>
+                  <Link className={css.link} to="/register">
+                    Register
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/login">Login</Link>
+                  <Link className={css.link} to="/login">
+                    Login
+                  </Link>
                 </li>
               </>
             )}

@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { useState } from 'react';
+import css from './RegisterPage.module.css';
 
 export default function RegisterPage(params) {
   const [name, setName] = useState('');
@@ -44,27 +45,36 @@ export default function RegisterPage(params) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name
-        <input value={name} onChange={handleChange} name="name" type="text" />
-      </label>
-      <label>
-        Email
-        <input value={email} onChange={handleChange} name="email" type="text" />
-      </label>
+    <div className={css.container}>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <label className={css.name}>
+          Name
+          <input value={name} onChange={handleChange} name="name" type="text" />
+        </label>
+        <label className={css.name}>
+          Email
+          <input
+            value={email}
+            onChange={handleChange}
+            name="email"
+            type="text"
+          />
+        </label>
 
-      <label>
-        Password
-        <input
-          value={password}
-          onChange={handleChange}
-          name="password"
-          type="password"
-        />
-      </label>
+        <label className={css.name}>
+          Password
+          <input
+            value={password}
+            onChange={handleChange}
+            name="password"
+            type="password"
+          />
+        </label>
 
-      <button type="submit">Send</button>
-    </form>
+        <button className={css.button} type="submit">
+          Send
+        </button>
+      </form>
+    </div>
   );
 }

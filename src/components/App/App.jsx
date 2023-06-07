@@ -7,10 +7,10 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import PublicRoute from 'components/PublicRoute/PublicRoute';
 
-const ContactsPage = lazy(() => import('pages/ContactsPage.jsx'));
-const HomePage = lazy(() => import('pages/HomePage.jsx'));
-const LoginPage = lazy(() => import('pages/LoginPage.jsx'));
-const RegisterPage = lazy(() => import('pages/RegisterPage.jsx'));
+const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage.jsx'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage.jsx'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage.jsx'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage.jsx'));
 
 const App = () => {
   const dispatch = useDispatch();
